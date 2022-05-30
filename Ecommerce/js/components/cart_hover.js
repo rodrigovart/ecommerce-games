@@ -1,16 +1,10 @@
-(function () {
-    $('.shopping-cart').each(function () {
-        var delay = $(this).index() * 50 + 'ms';
-        $(this).css({
-            '-webkit-transition-delay': delay,
-            '-moz-transition-delay': delay,
-            '-o-transition-delay': delay,
-            'transition-delay': delay
-        });
-    });
-    $('#cart, .shopping-cart').hover(function (e) {
-        $(".shopping-cart").stop(true, true).addClass("active");
-    }, function () {
-        $(".shopping-cart").stop(true, true).removeClass("active");
-    });
-})();
+function cartHover(produto, carrinho) {
+        return `<ul class="shopping-cart-items">
+                    <li class="clearfix">
+                        <img src="${produto[0].descricao}" alt="item1" />
+                        <span class="item-name">${produto[0].nome}</span>
+                        <span class="item-price">R$ ${carrinho.precoUnitario}</span>
+                        <span class="item-quantity">Quantidade: ${carrinho.quantidade}</span>
+                    </li>
+                </ul>`
+}

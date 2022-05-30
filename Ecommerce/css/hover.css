@@ -40,12 +40,6 @@ nav a:hover {
   color: black;
 }
 
-.navbar {
-  border-top: 1px solid #fff;
-  background: url("https://www.qispackaging.com.au/App_Themes/QISPackaging/Images/bg-nav-rep-x.jpg") repeat-x;
-  height: 43px;
-}
-
 .container {
   margin: auto;
   width: 80%;
@@ -85,6 +79,7 @@ nav a:hover {
   -webkit-transform: scale(0);
   transform-origin: right top 0;
   transform: scale(0);
+  z-index: 10000;
 }
 .shopping-cart.active {
   opacity: 1;
@@ -104,6 +99,7 @@ nav a:hover {
   padding-top: 20px;
 }
 .shopping-cart .shopping-cart-items li {
+  text-decoration: none;
   margin-bottom: 18px;
 }
 .shopping-cart .shopping-cart-items img {
@@ -112,6 +108,10 @@ nav a:hover {
   max-width: 70px;
   max-height: 70px;
 }
+.shopping-cart-items{
+  list-style-type: none;
+}
+
 .shopping-cart .shopping-cart-items .item-name {
   display: block;
   font-size: 16px;

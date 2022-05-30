@@ -6,3 +6,4 @@ const URL_CARRINHOS = '/carrinhos'
 TOKEN = ''
 product = []
 carts = []
+carts_products_user = []
