@@ -7,8 +7,13 @@ class Product {
         this._id = _id
     }
     
-    getProduct(id) {
+    getProduct(id = undefined) {
         let product = JSON.parse(localStorage.getItem('produtos'))
-        return product.filter(p => p._id == id)
+
+        if (id != undefined) {
+            return product.filter(p => p._id == id)
+        }
+
+        return product
      }
 }

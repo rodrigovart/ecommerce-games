@@ -1,26 +1,14 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    list-style: none;
-}
-
-body{
-    background-color:#3ecc6d;
-}
-
-.container {
-    margin: 20px auto;
-    width: 800px;
-    padding: 30px
-}
-
 .card.box1 {
     width: 350px;
-    height: 500px;
     background-color: #3ecc6d;
     color: #ffffff;
     border-radius: 0
+}
+
+.nav-link {
+    border: none;
+    color: black;
+    border-bottom: 2px solid transparent;
 }
 
 .card.box2 {
@@ -70,28 +58,6 @@ body{
     justify-content: center;
     align-items: center;
     border: none
-}
-
-.nav.nav-tabs {
-    border: none;
-    border-bottom: 2px solid #ddd
-}
-
-.nav.nav-tabs .nav-item .nav-link {
-    border: none;
-    color: black;
-    border-bottom: 2px solid transparent;
-    font-size: 14px
-}
-
-.nav.nav-tabs .nav-item .nav-link:hover {
-    border-bottom: 2px solid #3ecc6d;
-    color: #05cf48
-}
-
-.nav.nav-tabs .nav-item .nav-link.active {
-    border: none;
-    border-bottom: 2px solid #3ecc6d
 }
 
 .form-control {
@@ -194,9 +160,5 @@ form .btn.btn-primary:hover {
     .card.box1,
     .card.box2 {
         width: 100%
-    }
-
-    .nav.nav-tabs .nav-item .nav-link {
-        font-size: 12px
     }
 }

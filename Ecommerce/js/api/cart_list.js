@@ -34,7 +34,7 @@ $('#cart, .shopping-cart').hover(function (e) {
     try {
         let carts = new Cart().getCart()
 
-        carts.forEach(cart => {
+        carts.produtos.forEach(cart => {
             let carrinho = new Cart(cart.idProduto, cart.precoUnitario, cart.quantidade)
             let produto = new Product().getProduct(carrinho.idProduto)
             $('#cart-hover').append(cartHover(produto, carrinho))

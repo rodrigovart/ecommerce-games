@@ -16,8 +16,10 @@ function fetchProducts(produtos) {
 
 function pagination(search = []) {
     try {
+        let produtos = new Product().getProduct()
+
         $('#data-container').pagination({
-            dataSource: (search.length > 0) ? search : product,
+            dataSource: (search.length > 0) ? search : produtos,
             className: 'paginationjs-theme-green',
             pageSize: 6,
             callback: function (data) {
@@ -34,8 +36,9 @@ function pagination(search = []) {
 
 $('#search-game').keydown(function (e) {
     let games = []
+    let produtos = new Product().getProduct()
 
-    product.filter(function (item) {
+    produtos.filter(function (item) {
         if (e.target.value.length >= 3) {
             if (item.nome.includes(e.target.value)) {
                 games.push(item)

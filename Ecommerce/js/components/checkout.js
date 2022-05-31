@@ -27,5 +27,5 @@ function getCart() {
 
 $('.btn-checkout').click(function (e) {
     e.preventDefault();
-    Swal.fire(`Sucesso!`, '', 'success')
+    Swal.fire(`Pedido realizado com sucesso!`, '', 'success')
 });
