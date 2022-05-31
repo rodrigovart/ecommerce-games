@@ -4,6 +4,3 @@ const URL_USUARIOS = '/usuarios'
 const URL_PRODUTOS = '/produtos'
 const URL_CARRINHOS = '/carrinhos'
 TOKEN = ''
-product = []
-carts = []
-carts_products_user = []

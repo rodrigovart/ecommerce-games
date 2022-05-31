@@ -54,11 +54,11 @@ $(function () {
 //     });
 // }
 
-// function getRandomInt() {
-//     min = Math.ceil(0);
-//     max = Math.floor(400);
-//     return Math.floor(Math.random() * (max - min)) + min;
-// }
+function getRandomInt() {
+    min = Math.ceil(0);
+    max = Math.floor(400);
+    return Math.floor(Math.random() * (max - min)) + min;
+}
 
 // function getRandomFloat() {
 //     const str = (Math.random() * (500.00 - 10.00) + 10.00).toFixed(2);

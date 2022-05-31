@@ -1,15 +1,12 @@
 class Cart {
-    constructor(idProduto, precoUnitario, quantidade) {
+    constructor(idProduto = undefined, precoUnitario = undefined, quantidade = undefined) {
         this.idProduto = idProduto
         this.precoUnitario = precoUnitario
         this.quantidade = quantidade
     }
 
-    setAll(carrinho) {
-        carts.push(carrinho)
-    }
-
-    getAll() {
-        return carts
-    }
+    getCart() {
+        let carrinho = JSON.parse(localStorage.getItem('carrinho'))
+        return carrinho
+     }
 }
