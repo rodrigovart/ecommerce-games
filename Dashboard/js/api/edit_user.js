@@ -4,7 +4,7 @@ function editUser(id) {
         icon: 'question',
     }).then((result) => {
         if (result.isConfirmed) {
-            location.href = 'register.html'
+            location.href = 'add_user.html'
             localStorage.setItem('idAlterar', id)
             localStorage.setItem('action', 'Editar')
             // let data = getDataUser()

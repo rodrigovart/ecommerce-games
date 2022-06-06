@@ -6,6 +6,7 @@ $(function () {
         },
         function (data) {
             TOKEN = data.authorization
+            localStorage.setItem('token', data.authorization)
             getAllProducts()
             // fecthGames()
         },

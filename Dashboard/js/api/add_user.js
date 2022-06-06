@@ -34,7 +34,7 @@ $('#add-user').click(function (e) {
         icon: 'question',
     }).then((result) => {
         if (result.isConfirmed) {
-            location.href = 'register.html'
+            location.href = 'add_user.html'
             localStorage.removeItem('idAlterar')
             localStorage.setItem('action', 'Adicionar')
         }
