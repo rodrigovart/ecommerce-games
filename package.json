@@ -1,0 +1,24 @@
+{
+  "name": "sistema_de_controle_de_vendas_loja_de_jogos",
+  "version": "1.0.0",
+  "description": "PIM IV",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodrigovart/Sistema_de_Controle_de_Vendas_Loja_de_Jogos.git"
+  },
+  "keywords": [],
+  "author": "Rodrigo Vart",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rodrigovart/Sistema_de_Controle_de_Vendas_Loja_de_Jogos/issues"
+  },
+  "homepage": "https://github.com/rodrigovart/Sistema_de_Controle_de_Vendas_Loja_de_Jogos#readme",
+  "devDependencies": {
+    "electron": "^19.0.2"
+  }
+}

@@ -54,6 +54,9 @@
                         Carrinho
                         <span class="badge bg-dark text-white ms-1 rounded-pill" id="cart-qtd">0</span>
                     </button>
+                    <button class="btn btn-danger" type="button" id="logout">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
                     <div class="shopping-cart">
                         <div class="shopping-cart-header">
                             <i class="bi-cart-fill me-1 cart-icon"></i><span class="badge">3</span>
@@ -69,10 +72,6 @@
                     </div>
                 </div>
             </div>
-
-            <button class="btn btn-outline-dark" type="button" id="dark-theme">
-                <i class="bi-sun-fill"></i>
-            </button>
         </div>
     </nav>
     <!-- Section-->
@@ -111,13 +110,3 @@
 </body>
 
 </html>
-<script>
-    document.getElementById('dark-theme').addEventListener('click', () => {
-        if (document.body.classList.contains('dark')) {
-            document.body.classList.remove('dark')
-        } else {
-            document.body.classList.add('dark')
-        }
-        document.getElementById('darkTheme').innerText = document.body.classList
-    })
-</script>

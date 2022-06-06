@@ -1,0 +1,66 @@
+[
+    {
+      "id_cliente": "",
+      "nome_cliente": "Tiger Nixon",
+      "profissao_cliente": "System Architect",
+      "cidade_cliente": "Edinburgh",
+      "idade_cliente": 61,
+      "data_compra_cliente": "2011/04/25"
+    },
+    {
+      "id_cliente": "",
+      "nome_cliente": "Garrett Winters",
+      "profissao_cliente": "Accountant",
+      "cidade_cliente": "Tokyo",
+      "idade_cliente": 63,
+      "data_compra_cliente": "2011/07/25"
+    },
+    {
+      "id_cliente": "",
+      "nome_cliente": "Ashton Cox",
+      "profissao_cliente": "Junior Technical Author",
+      "cidade_cliente": "San Francisco",
+      "idade_cliente": 66,
+      "data_compra_cliente": "2009/01/12"
+    },
+    {
+      "id_cliente": "",
+      "nome_cliente": "Cedric Kelly",
+      "profissao_cliente": "Senior Javascript Developer",
+      "cidade_cliente": "Edinburgh",
+      "idade_cliente": 22,
+      "data_compra_cliente": "2012/03/29"
+    },
+    {
+      "id_cliente": "",
+      "nome_cliente": "Airi Satou",
+      "profissao_cliente": "Accountant",
+      "cidade_cliente": "Tokyo",
+      "idade_cliente": 33,
+      "data_compra_cliente": "2008/11/28"
+    },
+    {
+      "id_cliente": "",
+      "nome_cliente": "Brielle Williamson",
+      "profissao_cliente": "Integration Specialist",
+      "cidade_cliente": "New York",
+      "idade_cliente": 61,
+      "data_compra_cliente": "2012/12/02"
+    },
+    {
+      "id_cliente": "",
+      "nome_cliente": "Herrod Chandler",
+      "profissao_cliente": "Sales Assistant",
+      "cidade_cliente": "San Francisco",
+      "idade_cliente": 59,
+      "data_compra_cliente": "2012/08/06"
+    },
+    {
+      "id_cliente": "",
+      "nome_cliente": "Rhona Davidson",
+      "profissao_cliente": "Integration Specialist",
+      "cidade_cliente": "Tokyo",
+      "idade_cliente": 55,
+      "data_compra_cliente": "2010/10/14"
+    }
+  ]

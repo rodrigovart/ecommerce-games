@@ -14,7 +14,7 @@ function createCardProduct(produto) {
                     </div>
                     <!-- Product actions-->
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-success mt-auto add-to-cart">Adicionar</a>
+                        <div class="text-center"><a class="btn btn-success mt-auto" id="add-to-cart" onClick="javascript:addCart('', 0)">Adicionar <i class="bi bi-cart-plus"></i></a>
                         </div>
                     </div>
                 </div>
