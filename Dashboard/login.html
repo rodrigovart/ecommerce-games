@@ -2,13 +2,24 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Login - Geek Store</title>
+        <meta name="description" content="Ecommerce" />
+        <meta name="author" content="Rodrigo Vart" />
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/geekBanana.jpeg" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
-        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <link href="http://pagination.js.org/dist/2.1.5/pagination.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://pagination.js.org/dist/2.1.5/pagination.min.js"></script>
+        <script src="http://pagination.js.org/js/prettify.min.js"></script>
+        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
+        <title>Login - Geek Store</title>
     </head>
     <body class="">
         <div id="layoutAuthentication">
@@ -21,11 +32,11 @@
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
                                     <div class="card-body">
                                         <form>
-                                            <div class="form-floating mb-3">
+                                            <div class="form-floating mb-3" id="divEmail">
                                                 <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" />
                                                 <label for="inputEmail">Email</label>
                                             </div>
-                                            <div class="form-floating mb-3">
+                                            <div class="form-floating mb-3" id="divSenha">
                                                 <input class="form-control" id="inputSenha" type="Senha" placeholder="Senha" />
                                                 <label for="inputSenha">Senha</label>
                                             </div>
@@ -35,12 +46,12 @@
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                                 <a class="small" href="Senha.html">Esqueceu a sua Senha?</a>
-                                                <a class="btn btn-primary" href="../Ecommerce/index.html">Login</a>
+                                                <a class="btn btn-primary" href="#" id="login">Login</a>
                                             </div>
                                         </form>
                                     </div>
                                     <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="add_user.html">Já tem conta? Login!</a></div>
+                                        <div class="small"><a href="add_user.html">Ainda não tem conta? Registre-se!</a></div>
                                     </div>
                                 </div>
                             </div>

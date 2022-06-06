@@ -1,8 +1,8 @@
 // LOGIN
 $(function () {
     $.post(`${URL_BASE+URL_LOGIN}`, {
-            email: "fulano@qa.com",
-            password: "teste"
+            email: "TraiaBarbosa@email.com",
+            password: "TraiaBarbosa@123"
         },
         function (data) {
             TOKEN = data.authorization
@@ -66,3 +66,8 @@ function getRandomInt() {
   
 //     return parseFloat(str);
 // }
+
+$('#logout').click(function (e) { 
+    e.preventDefault();
+    location.href = '/Users/rodrigovart/Documents/PIM/Sistema_de_Controle_de_Vendas_Loja_de_Jogos/Dashboard/login.html'
+});

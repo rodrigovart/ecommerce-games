@@ -1,5 +1,7 @@
-function saveProdutos(product) {
+async function saveProdutos(product) {
     try {
+        token()
+
         $.ajaxSetup({
             headers: {
                 // 'Content-Type': 'application/json',
@@ -8,17 +10,21 @@ function saveProdutos(product) {
             }
         });
 
-        $.post(url(), product,
-            function (data) {
-                if (data.message) {
-                    Swal.fire(`${data.message}`, ``, `success`)
-                }
-            },
-            "json"
-        ).fail(function (data) {
+        $.ajax({
+            type: "PUT",
+            url: url(),
+            data: product,
+            dataType: "json"
+        }).done(function (data) {
+            if (data.message) {
+                Swal.fire(`${data.message}`, ``, `success`)
+            }
+        }).fail(function (data) {
             if (data.responseJSON.message) {
                 Swal.fire(`${data.responseJSON.message}`, ``, `error`)
             }
+
+            return false
         });
     } catch (error) {
         console.warn(error)
@@ -58,13 +64,14 @@ $('#salvar-prod').click(function (e) {
 
 // // LOGIN
 // $(function () {
-//     $.post(`http://localhost:3000/login`, {
-//             email: "beltrano@qa.com.br",
-//             password: "teste"
-//         },
-//         function (data) {
-//             localStorage.setItem('token', data.authorization)
-//         },
-//         "JSON"
-//     );
+function token() {
+    $.post(`http://localhost:3000/login`, {
+            email: "beltrano@qa.com.br",
+            password: "teste"
+        }, function (data) {
+            localStorage.setItem('token', data.authorization)
+        },
+        "JSON"
+    );
+}
 // });

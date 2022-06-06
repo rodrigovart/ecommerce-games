@@ -236,7 +236,7 @@ sup {
 
 a {
   color: #0d6efd;
-  text-decoration: underline;
+  text-decoration: none;
   cursor: pointer;
 }
 
@@ -4562,6 +4562,7 @@ textarea.form-control-lg {
 .card-body {
   flex: 1 1 auto;
   padding: 1rem 1rem;
+  cursor: pointer;
 }
 
 .card-title {

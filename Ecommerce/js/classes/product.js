@@ -1,10 +1,10 @@
 class Product {
-    constructor(nome = undefined, preco = undefined, descricao = undefined, quantidade = undefined, _id = undefined) {
+    constructor(nome = undefined, preco = undefined, descricao = undefined, quantidade = undefined) {
         this.nome = nome
         this.preco = preco
         this.descricao = descricao
         this.quantidade = quantidade
-        this._id = _id
+        // this._id = _id
     }
     
     getProduct(id = undefined) {
