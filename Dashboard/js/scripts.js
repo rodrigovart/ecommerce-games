@@ -14,6 +14,11 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     }
 
+    if (localStorage.getItem('email') && localStorage.getItem('senha')) {
+        $('#inputEmail').val(localStorage.getItem('email'))
+        $('#inputSenha').val(localStorage.getItem('senha'))
+        $('#inputRelembrarSenha').attr('checked', true)
+    }
 });
 
 function login() {
@@ -34,7 +39,7 @@ function login() {
     ).fail(function (data) {
         if (data.responseJSON.message) {
             Swal.fire(`${data.responseJSON.message}`, ``, `error`)
-        } else if(data.responseJSON.email && data.responseJSON.password) {
+        } else if (data.responseJSON.email && data.responseJSON.password) {
             let inputs = document.querySelectorAll('.form-control')
 
             inputs.forEach(i => {
@@ -49,7 +54,7 @@ function login() {
     })
 }
 
-$('#login').click(function (e) { 
+$('#login').click(function (e) {
     e.preventDefault();
     let divs = document.querySelectorAll('.invalid')
     divs.forEach(i => {
@@ -62,11 +67,44 @@ function usuarioLogado() {
     let email = localStorage.getItem('usuario_logado')
 
     $.get(`http://localhost:3000/usuarios?email=${email}`,
-        function (data, textStatus, jqXHR) {
-            console.log(data.usuarios[0])
+        function (data) {
+            console.log(data.usuarios[0].administrador)
+            if (data.usuarios[0]) {
+                if (!data.usuarios[0].administrador == true) {
+                    try {
+                        location.href = '/Users/rodrigovart/Documents/PIM/Sistema_de_Controle_de_Vendas_Loja_de_Jogos/Ecommerce/index.html'
+                    } catch (error) {
+                        console.warn(error)
+                    }
+                }
+
+                try {
+                    $('#user-logado').empty().append(data.usuarios[0].nome);
+                } catch (error) {
+                    console.warn(error)
+                }
+            }
         },
         "json"
     ).fail(function (data) {
         console.warn(data)
     });
 }
+
+$('#inputRelembrarSenha').click(function (e) {
+    let email = $('#inputEmail').val()
+    let senha = $('#inputSenha').val()
+
+    if (e.target.checked && (email.length > 0 && senha.length > 0)) {
+        localStorage.setItem('email', email)
+        localStorage.setItem('senha', senha)
+    } else {
+        localStorage.removeItem('email')
+        localStorage.removeItem('senha')
+    }
+});
+
+$('#logout').click(function (e) {
+    e.preventDefault();
+    location.href = '/Users/rodrigovart/Documents/PIM/Sistema_de_Controle_de_Vendas_Loja_de_Jogos/Dashboard/login.html'
+});

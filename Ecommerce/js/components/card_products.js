@@ -10,11 +10,16 @@ function createCardProduct(produto) {
                             <h5 class="fw-bolder">${produto.nome}</h5>
                             <!-- Product price-->
                             R$ ${produto.preco}
+                            <div class="d-flex p-2 col-md-12">
+                                <span class="btn btn-light" id="-" onClick="javascript:addCart('${produto._id}', ${produto.preco}, $('#input${produto._id}').val(),  event)">-</span>
+                                    <input type="text" class="form-control text-center" id="input${produto._id}" value="1">
+                                <span class="btn btn-light" id="+" onClick="javascript:addCart('${produto._id}', ${produto.preco}, $('#input${produto._id}').val(), event)">+</span>
+                            </div>
                         </div>
                     </div>
                     <!-- Product actions-->
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-success mt-auto" id="add-to-cart" onClick="javascript:addCart('', 0)">Adicionar <i class="bi bi-cart-plus"></i></a>
+                        <div class="text-center"><a class="btn btn-success mt-auto" id="add-to-cart" onClick="javascript:addCart('${produto._id}')">Adicionar <i class="bi bi-cart-plus"></i></a>
                         </div>
                     </div>
                 </div>

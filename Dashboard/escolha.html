@@ -24,29 +24,45 @@
 </head>
 
 <body class="sb-nav-fixed">
-    <div id="layoutSidenav_content">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <!-- Navbar Brand-->
+        <a class="navbar-brand ps-3" href="#">Geek Store<img class="geekBanana"
+                src="assets/geekBanana.jpeg"></a>
+        <!-- Navbar Pesquisar-->
+        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+            <div class="input-group">
+            </div>
+        </form>
+        <!-- Navbar-->
+        <button class="btn btn-danger ms-auto ms-md-0 me-3 me-lg-4 text-center" type="button" id="logout">
+            <i class="bi bi-x-lg"></i>
+        </button>
+    </nav>
+    <div id="layoutSidenav_content" style="margin-top: 71px;">
         <main>
             <div class="container-fluid px-4">
                 <h1 class="mt-4">Escolha o Sistema a ser acessado</h1>
                 <div class="row justify-content-center">
-                    <div class="col-xl-3 col-md-3">
-                        <div class="card bg-primary mb-4">
+                    <div class="col-xl-3 col-md-3" id="dashboard">
+                        <div class="btn btn-primary mb-4">
                             <div class="card-body text-center">
-                                 <a class="text-white" href="index.html">Dashboard</a>
+                                <a class="text-white" href="index.html">Dashboard</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-3">
-                        <div class="card bg-warning mb-4">
+                    <div class="col-xl-3 col-md-3" id="loja">
+                        <div class="btn btn-warning mb-4">
                             <div class="card-body text-center">
-                                 <a class="text-white" href="/Users/rodrigovart/Documents/PIM/Sistema_de_Controle_de_Vendas_Loja_de_Jogos/Ecommerce/index.html">Loja Virtual</a>
+                                <a class="text-white"
+                                    href="/Users/rodrigovart/Documents/PIM/Sistema_de_Controle_de_Vendas_Loja_de_Jogos/Ecommerce/index.html">Loja
+                                    Virtual</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </main>
-        <footer class="py-4 bg-light mt-auto">
+        <footer class="py-4 bg-light mt-auto fixed-bottom">
             <div class="container-fluid px-4">
                 <div class="d-flex align-items-center justify-content-between small">
                     <div class="text-muted">Copyright &copy; Rodrigo Vart 2022</div>
@@ -62,5 +78,10 @@
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
 </script>
-
+<script src="js/scripts.js"></script>
+<script>
+    $(function () {
+        usuarioLogado()
+    });
+</script>
 </html>

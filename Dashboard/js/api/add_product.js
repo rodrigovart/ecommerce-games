@@ -64,14 +64,14 @@ $('#salvar-prod').click(function (e) {
 
 // // LOGIN
 // $(function () {
-function token() {
-    $.post(`http://localhost:3000/login`, {
-            email: "beltrano@qa.com.br",
-            password: "teste"
-        }, function (data) {
-            localStorage.setItem('token', data.authorization)
-        },
-        "JSON"
-    );
-}
+    function token() {
+        $.post(`http://localhost:3000/login`, {
+                email: "beltrano@qa.com.br",
+                password: "teste"
+            }, function (data) {
+                localStorage.setItem('token', data.authorization)
+            },
+            "JSON"
+        );
+    }
 // });
