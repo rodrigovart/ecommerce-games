@@ -10,6 +10,7 @@ $(function () {
             // localStorage.removeItem('carrinho')
             getAllProducts()
             getAllClients()
+            fillCarts()
             // fecthGames()
         },
         "JSON"

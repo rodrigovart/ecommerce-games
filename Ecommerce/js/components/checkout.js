@@ -8,14 +8,10 @@ function getCart() {
     let carrinho = new Cart(cart.idProduto, cart.quantidade, cart.precoUnitario)
     let cart_client = carrinho.getCart()
 
-    let total = document.querySelectorAll('#checkout-total')
-
-    total.forEach(e => {
-        e.innerHTML = `R$ ${cart_client.precoTotal}`
-    })
-
     cart_client.produtos.forEach(cart => {
+        console.log(cart)
         let produto = new Product().getProduct(cart.idProduto)
+        produto.quantidade = cart.quantidade
 
         try {
             $('#checkout-detalhe').append(cartHover(produto, carrinho))

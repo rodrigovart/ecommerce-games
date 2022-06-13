@@ -86,7 +86,7 @@ class Cart {
         let cart_qtd = document.querySelectorAll('#cart-qtd')
 
         cart_qtd.forEach(e => {
-            e.innerHTML = carts[0].quantidadeTotal
+            e.innerHTML = qtd
         })
         
         $('.badge').empty().append(qtd)
@@ -97,12 +97,16 @@ class Cart {
         let value = 0
 
         cart.produtos.forEach(e => {
-            console.log('setBadgeValue()')
             let produto = new Product().getProduct(e.idProduto)
             value += produto[0].preco * e.quantidade
         })
 
         $('.total').empty().append(`R$ ${value.toFixed(2)}`)
-        $('#checkout-total').empty().append(`R$ ${value.toFixed(2)}`)
+        let total = document.querySelectorAll('#checkout-total')
+
+        total.forEach(e => {
+            console.log(e)
+            e.innerHTML = `R$ ${value.toFixed(2)}`
+        })
     }
 }

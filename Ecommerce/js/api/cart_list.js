@@ -1,28 +1,7 @@
-$(function () {
-    $.getJSON(`${URL_BASE+URL_CARRINHOS}`,
-        function (data) {
-            // console.warn(data.carrinhos)
-            fillCarts(data.carrinhos)
-        },
-        "json"
-    );
-});
-
-function fillCarts(carts) {
-    let cart_qtd = document.querySelectorAll('#cart-qtd')
-
-    if (carts[0]._id == 'qbMqntef4iTOwWfg') {
-        return false
-    }
-    
-    cart_qtd.forEach(e => {
-        e.innerHTML = carts[0].quantidadeTotal
-    })
-
-    $('.badge').empty().append(carts[0].quantidadeTotal)
-    $('.total').empty().append(`R$ ${carts[0].precoTotal}`)
-
-    localStorage.setItem("carrinho", JSON.stringify(carts));
+function fillCarts() {
+   let fill = new Cart()
+   fill.setBadgeQtd()
+   fill.setBadgeValue()
 }
 
 $('.shopping-cart').each(function () {
