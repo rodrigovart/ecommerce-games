@@ -24,7 +24,7 @@ function pagination(search = []) {
             pageSize: 6,
             callback: function (data) {
                 $('#card-container').empty()
-                data.forEach(produto => {
+                data.reverse().forEach(produto => {
                     $('#card-container').append(createCardProduct(produto))
                 });
             }

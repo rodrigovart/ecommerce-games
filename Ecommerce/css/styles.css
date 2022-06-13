@@ -11293,3 +11293,20 @@ textarea.form-control-lg {
   max-width: 80px; 
   max-height: 80px;
 }
+
+.button-checkout {
+  background: #f8770c;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  display: block;
+  border-radius: 3px;
+  font-size: 16px;
+  margin: 25px 0 15px 0;
+  text-transform: uppercase;
+}
+
+.button-checkout:hover {
+  color: white;
+}

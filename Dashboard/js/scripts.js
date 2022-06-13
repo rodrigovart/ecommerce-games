@@ -106,5 +106,5 @@ $('#inputRelembrarSenha').click(function (e) {
 
 $('#logout').click(function (e) {
     e.preventDefault();
-    location.href = '/Users/rodrigovart/Documents/PIM/Sistema_de_Controle_de_Vendas_Loja_de_Jogos/Dashboard/login.html'
+    location.href = '/Dashboard/login.html'
 });

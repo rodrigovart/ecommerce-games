@@ -1,10 +1,10 @@
 class Product {
-    constructor(nome = undefined, preco = undefined, descricao = undefined, quantidade = undefined) {
+    constructor(nome = undefined, preco = undefined, descricao = undefined, quantidade = undefined, _id = undefined) {
         this.nome = nome
         this.preco = preco
         this.descricao = descricao
         this.quantidade = quantidade
-        // this._id = _id
+        this._id = _id
     }
     
     getProduct(id = undefined) {
@@ -15,5 +15,16 @@ class Product {
         }
 
         return product
+     }
+
+     jsonProduct() {
+        let produtosAdd = {
+            produtos: [{
+                idProduto: this._id,
+                quantidade: this.quantidade
+            }]
+        }
+
+        return produtosAdd
      }
 }

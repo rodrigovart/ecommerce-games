@@ -26,7 +26,7 @@ function fillTableProduct(products) {
 }
 
 function fillView(product) {
-    console.log(product)
+    // console.log(product)
     $('#nome').val(product.nome)
     $('#preco').val(product.preco)
     $('#quantidade').val(product.quantidade)

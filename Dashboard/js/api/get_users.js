@@ -39,7 +39,7 @@ function fillTableUser(users) {
 }
 
 function fillView(user) {
-    console.log(user)
+    // console.log(user)
     $('#nome').val(user.nome)
     $('#email').val(user.email)
     $('#password').val(user.password)
