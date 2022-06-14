@@ -6,8 +6,16 @@ class Product {
         this.quantidade = quantidade
         this._id = _id
     }
-    
+
     getProduct(id = undefined) {
+        fetch(`${URL_BASE+URL_PRODUTOS}`).then((resp) => {
+            if (resp.ok) {
+                resp.json().then((data) => {
+                    localStorage.setItem('produtos', JSON.stringify(data.produtos))
+                })
+            }
+        })
+
         let product = JSON.parse(localStorage.getItem('produtos'))
 
         if (id != undefined) {
@@ -15,9 +23,9 @@ class Product {
         }
 
         return product
-     }
+    }
 
-     jsonProduct() {
+    jsonProduct() {
         let produtosAdd = {
             produtos: [{
                 idProduto: this._id,
@@ -26,5 +34,5 @@ class Product {
         }
 
         return produtosAdd
-     }
+    }
 }

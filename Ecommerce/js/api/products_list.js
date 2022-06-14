@@ -1,19 +1,4 @@
 // PRODUCTS
-function getAllProducts() {
-    $.getJSON(`${URL_BASE+URL_PRODUTOS}`,
-        function (data) {
-            fetchProducts(data.produtos)
-        },
-        "json"
-    );
-}
-
-function fetchProducts(produtos) {
-    localStorage.setItem("produtos", JSON.stringify(produtos));
-
-    pagination()
-}
-
 function pagination(search = []) {
     try {
         let produtos = new Product().getProduct()

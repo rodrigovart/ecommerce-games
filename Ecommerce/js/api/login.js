@@ -8,9 +8,10 @@ $(function () {
             TOKEN = data.authorization
             localStorage.setItem('token', data.authorization)
             // localStorage.removeItem('carrinho')
-            getAllProducts()
+            fillAllProductsCards(true)
             getAllClients()
             fillCarts()
+            pagination()
             // fecthGames()
         },
         "JSON"
@@ -58,9 +59,27 @@ $('#showAllProducts').click(function (e) {
         }
     })
 
-    fetch('../../js/components/allproducts.html').then(() => {
+    fetch('./allproducts.html').then((resp) => {
         if (resp.ok) {
             location.href = '../../js/components/allproducts.html'
         }
     })
 })
+
+$('#home').click(function (e) { 
+    e.preventDefault();
+    
+    fetch('../../index.html').then((resp) => {
+        if (resp.ok) {
+            location.href = '../../index.html'
+        }
+    })
+});
+
+function fillAllProductsCards(pagination = false) {
+    let products = new Product().getProduct()
+
+    products.map(product => {
+        $('#card-container').append(createCardProduct(product))
+    })
+}
