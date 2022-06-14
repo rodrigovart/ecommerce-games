@@ -9,7 +9,6 @@ function getCart() {
     let cart_client = carrinho.getCart()
 
     cart_client.produtos.forEach(cart => {
-        // console.log(cart)
         let produto = new Product().getProduct(cart.idProduto)
         produto.quantidade = cart.quantidade
 
@@ -55,7 +54,7 @@ $('.btn-checkout').click(function (e) {
             })
         }
     }).catch((error) => {
-        console.log('There has been a problem with your fetch operation: ' + error.message);
+        console.warn('There has been a problem with your fetch operation: ' + error.message);
     })
 })
 
@@ -81,6 +80,6 @@ function closeCart() {
             })
         }
     }).catch((error) => {
-        console.log('There has been a problem with your fetch operation: ' + error.message);
+        console.warn('There has been a problem with your fetch operation: ' + error.message);
     })
 }

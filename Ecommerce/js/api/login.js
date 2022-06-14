@@ -32,47 +32,6 @@ function getClientId() {
     return users.filter(e => e.email == email)[0]
 }
 
-// function fecthGames() {
-//     const settings = {
-//         "async": true,
-//         "crossDomain": true,
-//         "url": "https://free-to-play-games-database.p.rapidapi.com/api/games?sort-by=popularity",
-//         "method": "GET",
-//         "headers": {
-//             "X-RapidAPI-Host": "free-to-play-games-database.p.rapidapi.com",
-//             "X-RapidAPI-Key": "8e95f39d66msha57ddd2541a4616p114b9cjsn4674f86105ef"
-//         }
-//     };
-
-//     $.ajax(settings).done(function (response) {
-//         response.forEach(e => {
-//             addProdutos(e.title, e.thumbnail)
-//         });
-//     });
-// }
-
-
-// function addProdutos(nome, foto) {
-//     $.ajax({
-//         url: `${URL_BASE+URL_PRODUTOS}`,
-//         type: 'post',
-//         data: {
-//             nome: nome, preco: getRandomInt(), descricao: foto, quantidade: getRandomInt()
-//         },
-//         headers: {
-//             Authorization: TOKEN
-//         },
-//         dataType: 'json',
-//         success: function (data) {
-//             Swal.fire(
-//                 `${data.message}`,
-//                 '',
-//                 'success'
-//             )
-//         }
-//     });
-// }
-
 function getRandomInt() {
     min = Math.ceil(0);
     max = Math.floor(400);
@@ -90,14 +49,18 @@ $('#logout').click(function (e) {
     location.href = '/Dashboard/login.html'
 });
 
-// let interval = setInterval(() => {
-//     let cart = new Cart().getCart()
-//     let qtd
-//     if (cart) {
-//         cart.produtos.forEach(e => {
-//             qtd += e.quantidade
-//         })
+$('#showAllProducts').click(function (e) {
+    e.preventDefault();
 
-//         $('#cart-qtd').empty().append(qtd)
-//     }
-// }, 1000)
+    fetch('js/components/allproducts.html').then((resp) => {
+        if (resp.ok) {
+            location.href = 'js/components/allproducts.html'
+        }
+    })
+
+    fetch('../../js/components/allproducts.html').then(() => {
+        if (resp.ok) {
+            location.href = '../../js/components/allproducts.html'
+        }
+    })
+})

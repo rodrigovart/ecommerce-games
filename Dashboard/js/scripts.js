@@ -68,7 +68,6 @@ function usuarioLogado() {
 
     $.get(`http://localhost:3000/usuarios?email=${email}`,
         function (data) {
-            console.log(data.usuarios[0].administrador)
             if (data.usuarios[0]) {
                 if (!data.usuarios[0].administrador == true) {
                     try {

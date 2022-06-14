@@ -42,7 +42,6 @@ class Cart {
                 if (carrinho.produtos.length > 0) {
                     return carrinho
                 } else {
-                    console.log('parse erorr')
                     Swal.fire({
                         position: 'top-end',
                         icon: 'error',
@@ -76,37 +75,44 @@ class Cart {
     }
 
     setBadgeQtd() {
-        let cart = this.getCart()
-        let qtd = 0
+        try {
+            let cart = this.getCart()
+            let qtd = 0
 
-        cart.produtos.forEach(e => {
-            qtd += e.quantidade
-        })
+            cart.produtos.forEach(e => {
+                qtd += e.quantidade
+            })
 
-        let cart_qtd = document.querySelectorAll('#cart-qtd')
+            let cart_qtd = document.querySelectorAll('#cart-qtd')
 
-        cart_qtd.forEach(e => {
-            e.innerHTML = qtd
-        })
-        
-        $('.badge').empty().append(qtd)
+            cart_qtd.forEach(e => {
+                e.innerHTML = qtd
+            })
+
+            $('.badge').empty().append(qtd)
+        } catch (error) {
+            console.warn(error)
+        }
     }
 
     setBadgeValue() {
-        let cart = this.getCart()
-        let value = 0
+        try {
+            let cart = this.getCart()
+            let value = 0
 
-        cart.produtos.forEach(e => {
-            let produto = new Product().getProduct(e.idProduto)
-            value += produto[0].preco * e.quantidade
-        })
+            cart.produtos.forEach(e => {
+                let produto = new Product().getProduct(e.idProduto)
+                value += produto[0].preco * e.quantidade
+            })
 
-        $('.total').empty().append(`R$ ${value.toFixed(2)}`)
-        let total = document.querySelectorAll('#checkout-total')
+            $('.total').empty().append(`R$ ${value.toFixed(2)}`)
+            let total = document.querySelectorAll('#checkout-total')
 
-        total.forEach(e => {
-            // console.log(e)
-            e.innerHTML = `R$ ${value.toFixed(2)}`
-        })
+            total.forEach(e => {
+                e.innerHTML = `R$ ${value.toFixed(2)}`
+            })
+        } catch (error) {
+            console.warn(error)
+        }
     }
 }

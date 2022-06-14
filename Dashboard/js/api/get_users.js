@@ -32,14 +32,12 @@ async function setClientes(users) {
 function fillTableUser(users) {
     users.forEach(user => {
         $('#tbody-clientes').append(userRow(user));
-        // deleteUser(user._id)
     });
 
     dataTable()
 }
 
 function fillView(user) {
-    // console.log(user)
     $('#nome').val(user.nome)
     $('#email').val(user.email)
     $('#password').val(user.password)

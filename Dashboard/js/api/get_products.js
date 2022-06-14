@@ -19,14 +19,12 @@ function fillTableProduct(products) {
 
     produtos.forEach(product => {
         $('#tbody-produtos').append(productRow(product));
-        // deleteproduct(product._id)
     });
 
     dataTable()
 }
 
 function fillView(product) {
-    // console.log(product)
     $('#nome').val(product.nome)
     $('#preco').val(product.preco)
     $('#quantidade').val(product.quantidade)
