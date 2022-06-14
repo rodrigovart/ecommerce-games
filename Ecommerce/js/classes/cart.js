@@ -105,7 +105,7 @@ class Cart {
         let total = document.querySelectorAll('#checkout-total')
 
         total.forEach(e => {
-            console.log(e)
+            // console.log(e)
             e.innerHTML = `R$ ${value.toFixed(2)}`
         })
     }
