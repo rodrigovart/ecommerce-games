@@ -60,6 +60,31 @@ class UserDAO {
         }
     }
 
+    static function getUserByEmailAndPassword($email, $senha) {
+        try {
+            $sql = "SELECT * FROM user WHERE user_email = :email AND user_password = :senha";
+
+            $connection = New Connection();
+            $p_sql = $connection->getInstance()->prepare($sql);
+            $p_sql->bindValue(":email", $email);
+            $p_sql->bindValue(":senha", $senha);
+            $p_sql->execute();
+            $fetch = $p_sql->fetch(PDO::FETCH_ASSOC);
+
+            if ($fetch != null && $fetch) {
+                $user = new User($fetch);
+
+                return $user;
+            } else {
+                throw new Exception("Erro ao trazer usuario e senha", 1);
+            }
+        } catch (Exception $e) {
+            $log = new Logger('Logger UserDAO');
+            $log->pushHandler(new StreamHandler('logs/log_connection.log', Level::Error));
+            $log->error($e);
+        }
+    }
+
     function deleteUserById($id) {
         try {
             $sql = "DELETE FROM user WHERE user_id = :id";

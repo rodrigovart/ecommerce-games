@@ -1,140 +1,26 @@
 <?php
-require_once __DIR__ . "/controllers/IndexController.php";
-$index = new IndexController();
-var_dump($index->index());
-die;
-?>
-<!DOCTYPE html>
-<html lang="pt-br">
+$request = $_SERVER['REQUEST_URI'];
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Ecommerce" />
-    <meta name="author" content="Rodrigo Vart" />
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/geekBanana.jpeg" />
-    <!-- Bootstrap icons-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
-    <link href="css/hover.css" rel="stylesheet" />
-    <link href="css/dark-theme.css" rel="stylesheet" />
-    <link href="http://pagination.js.org/dist/2.1.5/pagination.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://pagination.js.org/dist/2.1.5/pagination.min.js"></script>
-    <script src="http://pagination.js.org/js/prettify.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
-    <title>Geek Store</title>
-</head>
-
-<body>
-    <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="#!">Geek Store <img class="geekBanana" src="assets/geekBanana.jpeg"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" id="home" href="#!">Home</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">Loja</a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#!" id="showAllProducts">Todos os Produtos</a></li>
-                            <li>
-                                <hr class="dropdown-divider" />
-                            </li>
-                            <li><a class="dropdown-item" href="#!">Produtos Populares</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#!">Sobre</a></li>
-                </ul>
-                <div class="d-flex navbar-right">
-                    <button class="btn btn-secondary" type="button" id="cart">
-                        <i class="bi-cart-fill me-1"></i>
-                        Carrinho
-                        <span class="badge bg-info text-white ms-1 rounded-pill" id="cart-qtd">0</span>
-                    </button>
-                    <button class="btn btn-danger" type="button" id="logout">
-                        <i class="bi bi-x-lg"></i>
-                    </button>
-                    <div class="shopping-cart">
-                        <div class="shopping-cart-header">
-                            <i class="bi-cart-fill me-1 cart-icon"></i><span class="badge">3</span>
-                            <div class="shopping-cart-total">
-                                <span class="lighter-text">Total:</span>
-                                <span class="main-color-text total">70€</span>
-                            </div>
-                        </div>
-                        <div id="cart-hover">
-                        </div>
-                        <!--end shopping-cart-header -->
-                        <a href="js/components/checkout.html" class="button-checkout">Checkout <i
-                                class="fa fa-chevron-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-    <!-- Section-->
-    <section class="py-5">
-        <div class="container px-4 px-lg-5" id="data-container">
-            <nav class="navbar">
-                <div class="container-fluid">
-                    <a class="navbar-brand"></a>
-                    <form class="d-flex mb-4">
-                        <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar"
-                            id="search-game">
-                    </form>
-                </div>
-            </nav>
-            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
-                id="card-container">
-            </div>
-        </div>
-    </section>
-    <!-- Footer-->
-    <footer class="py-5 bg-dark">
-        <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Rodrigo Vart 2022</p>
-        </div>
-    </footer>
-    <!-- Core theme JS-->
-    <script src="js/env.js"></script>
-    <script src="js/api/login.js"></script>
-    <script src="js/classes/cart.js"></script>
-    <script src="js/classes/product.js"></script>
-    <script src="js/components/card_products.js"></script>
-    <script src="js/components/cart_hover.js"></script>
-    <script src="js/api/products_list.js"></script>
-    <script src="js/api/add_cart.js"></script>
-    <script src="js/api/cart_list.js"></script>
-</body>
-<script>
-    function alertaTop(msg = '', icon = TOASTY_SUCCESS) {
-        Toastify({
-            text: `${msg}`,
-            duration: 2000,
-            // destination: "https://github.com/apvarun/toastify-js",
-            // newWindow: true,
-            close: true,
-            gravity: "bottom", // `top` or `bottom`
-            position: "right", // `left`, `center` or `right`
-            stopOnFocus: true, // Prevents dismissing of toast on hover
-            style: {
-                background: `${icon}`,
-            },
-            onClick: function () {} // Callback after click
-        }).showToast();
-    }
-</script>
-
-</html>
+switch ($request) {
+    case '/' :
+        require __DIR__ . '/views/login.php';
+        break;
+    case '' :
+        require __DIR__ . '/views/login.php';
+        break;
+    case '/login' :
+        require __DIR__ . '/controllers/LoginController.php';
+        $login = new LoginController();
+        echo $login->login($_POST);
+        break;
+    case '/home' :
+        require __DIR__ . '/views/home.php';
+        break;
+    case '/registrar' :
+        require __DIR__ . '/views/registrar.php';
+        break;
+    default:
+        http_response_code(404);
+        require __DIR__ . '/views/404.php';
+        break;
+}

@@ -8,7 +8,7 @@ Class User {
     public function __construct($user) {
         $this->setUser_id($user["user_id"]);
         $this->setUser_name($user["user_name"]);
-        $this->setUser_email($user["user _email"]);
+        $this->setUser_email($user["user_email"]);
         $this->setUser_password($user["user_password"]);
     }
 
