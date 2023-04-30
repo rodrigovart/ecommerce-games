@@ -1,5 +1,7 @@
 {
     "require": {
-        "monolog/monolog": "^3.3"
+        "monolog/monolog": "^3.3",
+        "vlucas/phpdotenv": "^5",
+        "vlucas/valitron": "^1.4"
     }
 }

@@ -1,5 +1,7 @@
 <?php
-require_once __DIR__ . "/database/Connection.php";
+require_once __DIR__ . "/controllers/IndexController.php";
+$index = new IndexController();
+var_dump($index->index());
 die;
 ?>
 <!DOCTYPE html>

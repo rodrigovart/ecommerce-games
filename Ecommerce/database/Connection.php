@@ -33,7 +33,7 @@ class Connection {
             return $this->instance;
         } catch (Exception $e) {
             $log = new Logger('Logger Conexao');
-            $log->pushHandler(new StreamHandler('logs/log_connection.log', Level::Warning));
+            $log->pushHandler(new StreamHandler('logs/log_connection.log', Level::Error));
             $log->error($e);
         }
     }
