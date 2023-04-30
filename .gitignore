@@ -1,9 +1,2 @@
-# Dashboard
-# Dashboard/
-# Ecommerce
-# Ecommerce/
-ServeRest
-ServeRest/
-node_modules
-node_modules/
-package-lock.json
+vendor
+/vendor
