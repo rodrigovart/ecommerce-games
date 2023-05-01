@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
+<?php 
+function number() { return rand(0, 100); } 
+?>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -41,28 +43,28 @@
                                                 <div class="col-md-12">
                                                     <div class="form-floating mb-3 mb-md-0">
                                                         <input class="form-control" id="nome" type="text"
-                                                            placeholder="Digite seu Nome" />
+                                                            placeholder="Digite seu Nome" value='Rodrigo Vart <?=number()?>'/>
                                                         <label for="nome">Nome</label>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" id="email" type="email"
-                                                    placeholder="name@example.com" />
+                                                    placeholder="name@example.com" value='rodrigo<?=number()?>@email.com'/>
                                                 <label for="email">Email</label>
                                             </div>
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="password" type="Senha"
-                                                            placeholder="Criar Senha" />
+                                                        <input class="form-control" id="password" type="password"
+                                                            placeholder="Criar Senha" value='123'/>
                                                         <label for="password">Senha</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="password2" type="Senha"
-                                                            placeholder="Confirmar Senha" />
+                                                        <input class="form-control" id="password2" type="password"
+                                                            placeholder="Confirmar Senha" value='123'/>
                                                         <label for="password">Confirmar Senha</label>
                                                     </div>
                                                 </div>
@@ -97,10 +99,6 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
     </script>
-    <script src="../assets/js/classes/user.js"></script>
-    <script src="../assets/js/api/get_users.js"></script>
-    <script src="../assets/js/api/add_user.js"></script>
-    <script src="../assets/js/api/delete_user.js"></script>
-    <script src="../assets/js/api/edit_user.js"></script>
+    <script src="../assets/js/signup.js"></script>
 </body>
 </html>

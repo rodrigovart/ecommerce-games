@@ -37,8 +37,7 @@ button.addEventListener('click', () => {
                 }
             } else {
                 if (data.user) {
-                    let user = data.user
-                    location.href = '/home'
+                    successAlert(data.user.name)
                 } else {
                     errorAlert()
                 }
@@ -76,6 +75,18 @@ senha.addEventListener('keypress', element => {
         }
     })
 })
+
+function successAlert(nome) {
+    Swal.fire({
+        title: `Bem Vindo ${nome}`,
+        confirmButtonText: 'Continuar',
+        icon: 'success'
+      }).then((result) => {
+        if (result.isConfirmed) {
+            location.href = '/home'
+        }
+      })
+}
 
 function errorAlert() {
     Swal.fire(

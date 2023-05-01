@@ -3,12 +3,13 @@ require_once "vendor/autoload.php";
 require_once __DIR__ . "/../classes/UserDAO.php";
 require_once __DIR__ . "/../classes/Validate.php";
 
-class LoginController {
-    function login($user) {
+class SingUpController {
+    function sign($user) {
         $validate = new Validate();
-        $isValidLogin = $validate->validateLogin($user);
+        $isValidSign = $validate->validateSign($user);
 
-        if (!is_array($isValidLogin) && $isValidLogin) {
+        if (!is_array($isValidSign) && $isValidSign) {
+            UserDAO::insertUser($user);
             $find_user = UserDAO::getUserByEmailAndPassword($user['email'], $user['senha']);
 
             if ($find_user && $find_user->getUsuario_id()) {
@@ -24,7 +25,7 @@ class LoginController {
 
             return json_encode(array('isValid' => false, null));
         } else {
-            $validation = array('isValid' => false, $isValidLogin);
+            $validation = array('isValid' => false, $isValidSign);
             return json_encode($validation);
         }
     }

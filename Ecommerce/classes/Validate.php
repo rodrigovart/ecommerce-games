@@ -16,4 +16,17 @@ class Validate {
             return $v->errors();
         }
     }
+
+    function validateSign($args) {
+        Validator::lang('pt-br');
+        $v = new Validator($args);
+        $v->rule('required', ['senha', 'email', 'nome']);
+        $v->rule('email', 'email');
+
+        if($v->validate()) {
+            return true;
+        } else {
+            return $v->errors();
+        }
+    }
 }

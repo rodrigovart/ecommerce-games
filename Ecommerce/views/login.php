@@ -67,7 +67,7 @@
                                     </form>
                                 </div>
                                 <div class="card-footer text-center py-3">
-                                    <div class="small"><a href="/registrar">Ainda não tem conta? Registre-se!</a>
+                                    <div class="small"><a href="/signup">Ainda não tem conta? Registre-se!</a>
                                     </div>
                                 </div>
                             </div>

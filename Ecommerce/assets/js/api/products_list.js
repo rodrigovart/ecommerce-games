@@ -1,15 +1,13 @@
 // PRODUCTS
-function pagination(search = []) {
+function pagination(produtos, search = []) {
     try {
-        let produtos = new Product().getProduct()
-
         $('#data-container').pagination({
             dataSource: (search.length > 0) ? search : produtos,
             className: 'paginationjs-theme-green',
-            pageSize: 6,
+            pageSize: 4,
             callback: function (data) {
                 $('#card-container').empty()
-                data.reverse().forEach(produto => {
+                data.forEach(produto => {
                     $('#card-container').append(createCardProduct(produto))
                 });
             }

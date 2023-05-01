@@ -8,9 +8,9 @@ use Monolog\Level;
 use Monolog\Logger;
 
 class UserDAO {
-    function getAllUsers() {
+    static function getAllUsers() {
         try {
-            $sql = "SELECT * FROM user";
+            $sql = "SELECT * FROM usuario";
 
             $connection = New Connection();
             $p_sql = $connection->getInstance()->prepare($sql);
@@ -36,9 +36,9 @@ class UserDAO {
         }
     }
 
-    function getUserById($id) {
+    static function getUserById($id) {
         try {
-            $sql = "SELECT * FROM user WHERE user_id = :id";
+            $sql = "SELECT * FROM usuario WHERE usuario_id = :id";
 
             $connection = New Connection();
             $p_sql = $connection->getInstance()->prepare($sql);
@@ -62,7 +62,7 @@ class UserDAO {
 
     static function getUserByEmailAndPassword($email, $senha) {
         try {
-            $sql = "SELECT * FROM user WHERE user_email = :email AND user_password = :senha";
+            $sql = "SELECT * FROM usuario WHERE usuario_email = :email AND usuario_senha = :senha";
 
             $connection = New Connection();
             $p_sql = $connection->getInstance()->prepare($sql);
@@ -85,9 +85,9 @@ class UserDAO {
         }
     }
 
-    function deleteUserById($id) {
+    static function deleteUser($id) {
         try {
-            $sql = "DELETE FROM user WHERE user_id = :id";
+            $sql = "DELETE FROM usuario WHERE usuario_id = :id";
 
             $connection = New Connection();
             $p_sql = $connection->getInstance()->prepare($sql);
@@ -100,16 +100,16 @@ class UserDAO {
         }
     }
 
-    function insertUser($user) {
+    static function insertUser($user) {
         try {
-            $sql = "INSERT INTO user (user_name, user _email, user_password) 
+            $sql = "INSERT INTO usuario (usuario_nome, usuario_email, usuario_senha) 
                     VALUES (:nome, :email, :senha)";
 
             $connection = New Connection();
             $p_sql = $connection->getInstance()->prepare($sql);
-            $p_sql->bindValue(":user_name", $user['nome']);
-            $p_sql->bindValue(":user _email", $user['email']);
-            $p_sql->bindValue(":user_password", $user['senha']);
+            $p_sql->bindValue(":nome", $user['nome']);
+            $p_sql->bindValue(":email", $user['email']);
+            $p_sql->bindValue(":senha", $user['senha']);
             $p_sql->execute();
         } catch (Exception $e) {
             $log = new Logger('Logger UserDAO');
@@ -118,18 +118,18 @@ class UserDAO {
         }
     }
 
-    function updateUser($user) {
+    static function updateUser($user) {
         try {
-            $sql = "UPDATE user SET user_name = :user_name, 
-                                    user_email = :user _email, 
-                                    user_password = :user_password
-                    WHERE user_id = :id";
+            $sql = "UPDATE user SET usuario_nome = :nome, 
+                                    usuario_email = :email, 
+                                    usuario_password = :senha
+                    WHERE usuario_id = :id";
 
             $connection = New Connection();
             $p_sql = $connection->getInstance()->prepare($sql);
-            $p_sql->bindValue(":user_name", $user['nome']);
-            $p_sql->bindValue(":user _email", $user['email']);
-            $p_sql->bindValue(":user_password", $user['senha']);
+            $p_sql->bindValue(":nome", $user['nome']);
+            $p_sql->bindValue(":email", $user['email']);
+            $p_sql->bindValue(":senha", $user['senha']);
             $p_sql->bindValue(":id", $user['id']);
             $p_sql->execute();
         } catch (Exception $e) {
