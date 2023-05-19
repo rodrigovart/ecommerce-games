@@ -5,12 +5,14 @@ class Product {
     private $produto_nome;
     private $produto_descricao;
     private $produto_imagem;
+    private $produto_preco;
 
     public function __construct($product) {
         $this->setProduto_id($product["produto_id"]);
         $this->setProduto_nome($product["produto_nome"]);
         $this->setProduto_descricao($product["produto_descricao"]);
         $this->setProduto_imagem($product["produto_imagem"]);
+        $this->setProduto_preco($product["produto_preco"]);
     }
 
     /**
@@ -89,6 +91,26 @@ class Product {
     public function setProduto_imagem($produto_imagem)
     {
         $this->produto_imagem = $produto_imagem;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of produto_preco
+     */ 
+    public function getProduto_preco()
+    {
+        return $this->produto_preco;
+    }
+
+    /**
+     * Set the value of produto_preco
+     *
+     * @return  self
+     */ 
+    public function setProduto_preco($produto_preco)
+    {
+        $this->produto_preco = $produto_preco;
 
         return $this;
     }

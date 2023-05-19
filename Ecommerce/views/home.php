@@ -105,13 +105,13 @@ if (!$_SESSION) {session_start();}
         </div>
     </footer>
     <!-- Core theme JS-->
-    <!-- <script src="../assets/js/classes/cart.js"></script> -->
-    <!-- <script src="../assets/js/classes/product.js"></script> -->
+    <script src="../assets/js/classes/cart.js"></script>
+    <script src="../assets/js/classes/product.js"></script>
     <script src="../assets/js/components/card_products.js"></script>
-    <!-- <script src="../assets/js/components/cart_hover.js"></script> -->
+    <script src="../assets/js/components/cart_hover.js"></script>
     <script src="../assets/js/api/products_list.js"></script>
     <script src="../assets/js/api/add_cart.js"></script>
-    <!-- <script src="../assets/js/api/cart_list.js"></script>  -->
+    <script src="../assets/js/api/cart_list.js"></script> 
     <script src="../assets/js/home.js"></script>
 </body>
 <script>
@@ -120,7 +120,7 @@ if (!$_SESSION) {session_start();}
             text: `${msg}`,
             duration: 2000,
             close: true,
-            gravity: "bottom", // `top` or `bottom`
+            gravity: "top", // `top` or `bottom`
             position: "right", // `left`, `center` or `right`
             stopOnFocus: true, // Prevents dismissing of toast on hover
             style: {

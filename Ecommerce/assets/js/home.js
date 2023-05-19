@@ -1,11 +1,12 @@
 const logout = document.querySelector('#logout')
 const card_container = document.querySelector('#card-container')
+const produto_nome = document.querySelector('#produto-nome')
 const productsStorage = JSON.parse(localStorage.getItem('produtos'))
 const TOASTY_ERROR = "#dc3545"
 const TOASTY_SUCCESS = "#28a745"
 const TOASTY_INFO = "#17a2b8"
 
-logout.addEventListener('click', e => {
+logout.addEventListener('click', () => {
     location.href = '/logout'
 })
 

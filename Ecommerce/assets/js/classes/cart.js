@@ -23,9 +23,9 @@ class Cart {
     }
 
     getCart(idUsuario = undefined) {
-        let user = (idUsuario = undefined) ? idUsuario : getClientId()._id
+        let user = (idUsuario = undefined) ? idUsuario : 1
 
-        $.get(`http://localhost:3000/carrinhos/${user}`,
+        $.get(`/carrinhos/${user}`,
             function (data) {
                 if (data.carrinhos.length > 0) {
                     if (data._id == 'qbMqntef4iTOwWfg') {

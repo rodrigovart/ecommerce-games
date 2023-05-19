@@ -22,7 +22,8 @@ class HomeController {
                 'id' => $value->getProduto_id(),
                 'nome' => $value->getProduto_nome(),
                 'descricao' => $value->getProduto_descricao(),
-                'imagem' => $value->getProduto_imagem()
+                'imagem' => $value->getProduto_imagem(),
+                'preco' => $value->getProduto_preco()
             );
 
             array_push($products, $product);

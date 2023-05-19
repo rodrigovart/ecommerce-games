@@ -13,7 +13,7 @@ try {
             require __DIR__ . '/views/login.php';
             break;
         case '' :
-            require __DIR__ . '/views/login.php';
+            require  __DIR__ . '/views/login.php';
             break;
         case '/login' :
             require __DIR__ . '/controllers/LoginController.php';

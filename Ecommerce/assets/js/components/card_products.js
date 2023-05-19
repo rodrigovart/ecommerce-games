@@ -7,8 +7,9 @@ function createCardProduct(produto) {
                     <div class="card-body p-4">
                         <div class="text-center">
                             <!-- Product name-->
-                            <h5 class="fw-bolder">${produto.nome}</h5>
+                            <h5 class="fw-bolder" id="produto-nome" onClick="javascript:location.href = 'produtos/detalhes/${produto.id}'">${produto.nome}</h5>
                             <!-- Product price-->
+                            R$ ${produto.preco.toFixed(2)}
                             <div class="d-flex p-2 col-md-12">
                                 <span class="btn btn-light" id="-" onClick="javascript:addProductsCart('${produto.id}', $('#input${produto.id}').val())">-</span>
                                     <input type="text" class="form-control text-center" id="input${produto.id}" value="1">
